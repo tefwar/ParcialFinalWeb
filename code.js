@@ -15,31 +15,48 @@ app.use(express.static('public'));
     app.listen(5000);
     console.log("Server Connect")
 
+    //Contador de visitas
+var contador = 0;
+var contador2 = 0;
+var contador3 = 0;
+var fs = require('fs');
+var contents = fs.readFileSync('visitas.txt').toString();
+//console.log(contents);
+
 app.get('/', (req, res) => {
         res.render('index', {});
+        
+        var contadorFinal = parseInt(contador++);
+        console.log(contador);
+        fs.writeFileSync('visitas.txt', "Inicio: "+contadorFinal+" Proyectos: "+contador2+" Contacto: "+contador3, function (err) {
+            if (err) throw err;
+            //console.log('fucking!');
+          });
 })
+
+
 
 //Cambio de pagina
 app.get('/Proyectos', (req, res) => {
     res.render('proyectos', {});
+
+    var contadorFinal = parseInt(contador2++);
+    console.log(contador2);
+    fs.writeFileSync('visitas.txt', "Inicio: "+contador+" Proyectos: "+contadorFinal+" Contacto: "+contador3, function (err) {
+        if (err) throw err;
+        //console.log('fucking!');
+      });
 })
 
 app.get('/Contacto', (req, res) => {
-    res.render('contacto', {
-    });
+    res.render('contacto', {});
+
+    var contadorFinal = parseInt(contador3++);
+    console.log(contador3);
+    fs.writeFileSync('visitas.txt', "Inicio: "+contador+" Proyectos: "+contador2+" Contacto: "+contadorFinal, function (err) {
+        if (err) throw err;
+        //console.log('fucking!');
+      });
 });
 
-//Contador de visitas
-var fs = require('fs');
 
-//create a file named mynewfile3.txt:
-
-
-app.post('/', (req, res) => {
-    
-    fs.writeFile('visitas.txt', "fuck!", function (err) {
-        if (err) throw err;
-        console.log('fucking!');
-      });
-    
-    });

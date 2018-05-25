@@ -29,4 +29,17 @@ app.get('/Contacto', (req, res) => {
     });
 });
 
+//Contador de visitas
+var fs = require('fs');
 
+//create a file named mynewfile3.txt:
+
+
+app.post('/', (req, res) => {
+    
+    fs.writeFile('visitas.txt', "fuck!", function (err) {
+        if (err) throw err;
+        console.log('fucking!');
+      });
+    
+    });

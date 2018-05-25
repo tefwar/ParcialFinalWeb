@@ -1,0 +1,27 @@
+{
+  "name": "grimaldo_stefania",
+  "version": "1.0.0",
+  "description": "ParcialFinal",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node_modules/.bin/nodemon code.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tefwar/ParcialFinalWeb.git"
+  },
+  "author": "Stefania Grimaldo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tefwar/ParcialFinalWeb/issues"
+  },
+  "homepage": "https://github.com/tefwar/ParcialFinalWeb#readme",
+  "dependencies": {
+    "consolidate": "^0.15.1",
+    "express": "^4.16.3",
+    "handlebars": "^4.0.11",
+    "node": "^10.2.0",
+    "nodemon": "^1.17.5"
+  }
+}
